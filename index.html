@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+        <title>Kryspin Marcysiak</title>
+
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                background-color: #1B1B1B;
+            }
+            #middle-of-screen {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            #title-message {
+                margin-bottom: 20px;
+            }
+            #title {
+                color: white;
+                font-size: 2rem;
+            }
+            #typescript {
+                color: white;
+                font-size: 1.5rem;
+            }
+
+            #social-links {
+                margin-top: 20px;
+            }
+            #social-links img {
+                size: 20px;
+                height: 30px;
+                width: 30px;
+            }
+            #linkedin {
+                margin-right:10px;
+            }
+        </style>
+
+    </head>
+    <body onload="typeWritingEffect();">        
+
+        <div id="middle-of-screen">
+            <div id="title-message">
+                <h1 id="title">Kryspin Marcysiak's Portfolio</h1>
+            </div>
+            <div id="message">
+                <p id="typescript"></p>
+            </div>
+            <div id="social-links">
+                <a href="https://github.com/KryspinMarcysiak"><img src="assets/images/linkedin-icon-white.png" id="linkedin"></a>
+                <a href="https://www.linkedin.com/in/kryspin-marcysiak-002683231/"><img src="assets/images/github-icon-white.png" id="gitgub"></a>
+            </div>
+        </div>
+
+        <script>
+            var i = 0;
+            var txt = "Coming Soon...";
+            var speed = 110;
+
+            function typeWritingEffect() {
+                if (i < txt.length) {
+                    document.getElementById("typescript").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWritingEffect, speed);
+                } else {
+                    setTimeout(function() {
+                        i = 0; 
+                        document.getElementById("typescript").innerHTML = "";
+                        typeWritingEffect();
+                    }, 1000);
+                }
+            }
+        </script>
+    </body>
+
+</html>
