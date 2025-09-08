@@ -48,6 +48,9 @@
       width:100%;padding:10px;border-radius:12px;border:1px solid #e3e8ec;font-size:15px;
       margin-bottom:10px;
     }
+    .card.open .a {
+      display: block;
+    }
     footer{font-size:12px;color:var(--muted);text-align:center;margin-top:18px}
     @media (min-width:720px){
       .img-row img{max-width:420px}
@@ -341,43 +344,39 @@
   </main>
 
   <script>
-    // toggle logic
-    document.querySelectorAll('.card').forEach(card => {
-      const q = card.querySelector('.q');
-      const a = card.querySelector('.a');
-      q.addEventListener('click', () => {
-        const currently = a.style.display === 'block';
-        // close others? keep it independent so user can open multiple.
-        a.style.display = currently ? 'none' : 'block';
-        // smooth scroll into view on mobile when opening
-        if(!currently){
-          setTimeout(()=> card.scrollIntoView({behavior:'smooth',block:'center'}),120);
-        }
-      });
+  // Toggle answers by adding/removing "open" class
+  document.querySelectorAll('.card').forEach(card => {
+    const q = card.querySelector('.q');
+    q.addEventListener('click', () => {
+      card.classList.toggle('open');
+      // Scroll into view when opened
+      if(card.classList.contains('open')){
+        setTimeout(()=> card.scrollIntoView({behavior:'smooth',block:'center'}),120);
+      }
     });
+  });
 
-    document.getElementById('expandAll').addEventListener('click', () => {
-      document.querySelectorAll('.card .a').forEach(a => a.style.display = 'block');
-    });
-    document.getElementById('collapseAll').addEventListener('click', () => {
-      document.querySelectorAll('.card .a').forEach(a => a.style.display = 'none');
-    });
+  // Expand/Collapse All
+  document.getElementById('expandAll').addEventListener('click', () => {
+    document.querySelectorAll('.card').forEach(c => c.classList.add('open'));
+  });
+  document.getElementById('collapseAll').addEventListener('click', () => {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('open'));
+  });
 
-    // search filter
-    const search = document.getElementById('search');
-    search.addEventListener('input', (e) => {
-      const v = e.target.value.trim().toLowerCase();
-      document.querySelectorAll('#qa-list .item').forEach(it => {
-        const q = it.querySelector('.q').innerText.toLowerCase();
-        const a = it.querySelector('.a').innerText.toLowerCase();
-        if(!v || q.includes(v) || a.includes(v)) it.style.display = '';
-        else it.style.display = 'none';
-      });
+  // Search filter
+  const search = document.getElementById('search');
+  search.addEventListener('input', (e) => {
+    const v = e.target.value.trim().toLowerCase();
+    document.querySelectorAll('#qa-list .item').forEach(it => {
+      const q = it.querySelector('.q').innerText.toLowerCase();
+      const a = it.querySelector('.a').innerText.toLowerCase();
+      if(!v || q.includes(v) || a.includes(v)) it.style.display = '';
+      else it.style.display = 'none';
     });
-
-    // Improve tap targets on iOS Safari (prevent rubberband accidental)
-    document.body.addEventListener('touchstart', ()=>{}, {passive:true});
-  </script>
+  });
+</script>
 </body>
 </html>
+
 
