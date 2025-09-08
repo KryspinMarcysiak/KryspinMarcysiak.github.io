@@ -1,97 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
-        <title>Kryspin Marcysiak</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driving Theory Test Practice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #0074d9;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.4rem;
+    }
+    .container {
+      padding: 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .question {
+      background: white;
+      border-radius: 8px;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .answer {
+      display: none;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      border-left: 3px solid #0074d9;
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+    img {
+      width: 100%;
+      max-width: 350px;
+      margin: 1rem auto;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #0074d9;
+    }
+  </style>
+</head>
+<body>
 
-        <style>
-            body, html {
-                height: 100%;
-                margin: 0;
-                background-color: #1B1B1B;
-            }
-            #middle-of-screen {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-            #title-message {
-                margin-bottom: 20px;
-            }
-            #title {
-                color: white;
-                font-size: 2rem;
-            }
-            #typescript {
-                color: white;
-                font-size: 1.5rem;
-            }
+<header>Driving Theory Test Practice</header>
+<div class="container">
 
-            #social-links {
-                margin-top: 20px;
-            }
-            #social-links img {
-                size: 20px;
-                height: 30px;
-                width: 30px;
-            }
-            #linkedin {
-                margin-right:10px;
-            }
+  <h2>Hand Signals</h2>
+  <p>These are the required hand signals you may be asked during your test.</p>
+  <img src="613f7fe3-656d-4ae7-b2f7-fcb7542b296e.png" alt="Hand Signals 1">
+  <img src="b6cbfd8d-eea3-44de-98a7-d239f7d72fa1.png" alt="Hand Signals 2">
 
-            @media (max-width: 600px) {
-                #title {
-                    font-size: 85%;
-                }
-                #typescript {
-                    font-size: 85%;
-                }
-                #social-links img {
-                    height: 25px;
-                    width: 25px;
-                }
-            }
-        </style>
+  <h2>Sample Theory Questions</h2>
+  <div class="question">What do you check before starting the engine?</div>
+  <div class="answer">Check the handbrake is on, gears neutral, doors closed, seat/steering adjusted, mirrors set, seatbelts fastened.</div>
 
-    </head>
-    <body onload="typeWritingEffect();">        
+  <div class="question">When should you use the car’s horn?</div>
+  <div class="answer">Only to warn of danger or make presence known. Not in built-up areas between 11:30pm–7am except in emergency.</div>
 
-        <div id="middle-of-screen">
-            <div id="title-message">
-                <h1 id="title">Kryspin Marcysiak's Portfolio</h1>
-            </div>
-            <div id="message">
-                <p id="typescript"></p>
-            </div>
-            <div id="social-links">
-                <a href="https://www.linkedin.com/in/kryspin-marcysiak/"><img src="assets/images/linkedin-icon-white.png" id="linkedin"></a>
-                <a href="https://github.com/KryspinMarcysiak"><img src="assets/images/github-icon-white.png" id="github"></a>
-            </div>
-        </div>
+  <div class="question">What does a broken white line crossing the left hand lane mean?</div>
+  <div class="answer">It is a yield line. You must give way to traffic on the major road ahead.</div>
 
-        <script>
-            var i = 0;
-            var txt = "Coming Soon...";
-            var speed = 110;
+  <!-- You can continue adding Q&A in the same format -->
+</div>
 
-            function typeWritingEffect() {
-                if (i < txt.length) {
-                    document.getElementById("typescript").innerHTML += txt.charAt(i);
-                    i++;
-                    setTimeout(typeWritingEffect, speed);
-                } else {
-                    setTimeout(function() {
-                        i = 0; 
-                        document.getElementById("typescript").innerHTML = "";
-                        typeWritingEffect();
-                    }, 1000);
-                }
-            }
-        </script>
-    </body>
+<script>
+  const questions = document.querySelectorAll(".question");
+  questions.forEach(q => {
+    q.addEventListener("click", () => {
+      const ans = q.nextElementSibling;
+      ans.style.display = ans.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
 
+</body>
 </html>
