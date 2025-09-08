@@ -1,382 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Driving Theory Test Practice</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driving Theory Questions</title>
   <style>
-    :root{
-      --accent:#0b6fb1;
-      --card:#ffffff;
-      --bg:#f4f6f8;
-      --muted:#666;
-      --radius:12px;
-      --gap:12px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 20px;
     }
-    html,body{height:100%;margin:0;background:var(--bg);color:#111}
-    header{
-      background:linear-gradient(90deg,var(--accent),#0079d9 60%);
-      color:white;padding:18px 16px;
-      text-align:center;font-size:18px;font-weight:600;
-      box-shadow:0 2px 6px rgba(11,111,177,0.15);
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
     }
-    .container{max-width:900px;margin:16px auto;padding:0 14px 48px;}
-    .intro{background:var(--card);padding:12px;border-radius:10px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
-    .img-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:8px 0}
-    .img-row img{width:100%;max-width:360px;border-radius:8px;border:1px solid #ddd;display:block}
-    .controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
-    button, .btn {
-      background:var(--accent);color:white;border:0;padding:8px 12px;border-radius:10px;
-      font-weight:600; font-size:14px; box-shadow:0 2px 4px rgba(11,111,177,0.18);
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .btn-ghost{background:transparent;color:var(--accent);border:1px solid rgba(11,111,177,0.12)}
-    h2{color:var(--accent);margin:18px 4px 8px;font-size:16px}
-    .qa{margin:10px 0}
-    .card{
-      background:var(--card);border-radius:var(--radius);padding:12px 12px;
-      box-shadow:0 1px 4px rgba(0,0,0,0.06);margin-bottom:10px;
+
+    .card:hover {
+      background: #f9f9f9;
     }
-    .q{
-      display:flex;align-items:center;justify-content:space-between;gap:10px;
-      font-weight:600;font-size:15px;padding-right:8px;cursor:pointer;
+
+    .q {
+      font-weight: bold;
+      margin: 0;
     }
-    .q small{color:var(--muted);font-weight:400}
-    .a{display:none;margin-top:10px;padding-top:8px;border-top:1px dashed #eee;color:#222;line-height:1.45}
-    .search{
-      width:100%;padding:10px;border-radius:12px;border:1px solid #e3e8ec;font-size:15px;
-      margin-bottom:10px;
+
+    .a {
+      display: none;
+      margin-top: 10px;
+      line-height: 1.5;
     }
+
     .card.open .a {
       display: block;
     }
-    footer{font-size:12px;color:var(--muted);text-align:center;margin-top:18px}
-    @media (min-width:720px){
-      .img-row img{max-width:420px}
+
+    .images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .images img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
-  <header>Driving Theory Test — Sample Q&A & Hand Signals</header>
+  <h1>Sample Theory Questions for the Driving Test</h1>
 
-  <main class="container">
-    <section class="intro card">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div>
-          <div style="font-weight:700">All questions & answers</div>
-          <div style="color:var(--muted);font-size:13px;margin-top:6px">Tap a question to reveal the answer. Works on iPhone Safari.</div>
-        </div>
-        <div style="text-align:right">
-          <div style="font-size:12px;color:var(--muted)">Quick actions</div>
-          <div class="controls" style="justify-content:flex-end">
-            <button id="expandAll" class="btn">Show all</button>
-            <button id="collapseAll" class="btn btn-ghost">Hide all</button>
-          </div>
-        </div>
-      </div>
+  <!-- Questions and Answers -->
+  <div class="card"><p class="q">What do you check before starting the engine?</p><p class="a">Check the handbrake is on, the gears are in neutral, the doors are closed properly, your seat and steering wheel are set correctly, your mirrors are set correctly and you and your passenger have the safety belts on.</p></div>
 
-      <div class="img-row" style="margin-top:12px">
-        <img src="/assets/images/613f7fe3-656d-4ae7-b2f7-fcb7542b296e.png" alt="Hand signals 1">
-        <img src="/assets/images/b6cbfd8d-eea3-44de-98a7-d239f7d72fa1.png" alt="Hand signals 2">
-      </div>
-    </section>
+  <div class="card"><p class="q">When should you use the car’s horn?</p><p class="a">You should only use the horn to warn other road users of an on-coming danger or to make them aware of your presence for safety reasons. You should not use a horn in a built up area between 11.30 at night and 7 in the morning, except in an emergency.</p></div>
 
-    <h2>Search questions</h2>
-    <input id="search" class="search" placeholder="Type to filter questions (title or answer)" />
+  <div class="card"><p class="q">What does a broken white line crossing the left hand lane mean?</p><p class="a">This is a yield line. You must give right-of-way to any traffic on the major road ahead.</p></div>
 
-    <section id="qa-list" class="qa">
-      <!-- Each question card -->
-      <!-- 1 -->
-      <div class="card item">
-        <div class="q">What do you check before starting the engine?</div>
-        <div class="a">Check the handbrake is on, the gears are in neutral, the doors are closed properly, your seat and steering wheel are set correctly, your mirrors are set correctly and you and your passenger have the safety belts on.</div>
-      </div>
+  <div class="card"><p class="q">How should you position yourself for turning right on a one-way street?</p><p class="a">You should drive as close as you safely can to the right hand side of the one-way street.</p></div>
 
-      <!-- 2 -->
-      <div class="card item">
-        <div class="q">When should you use the car’s horn?</div>
-        <div class="a">You should only use the horn to warn other road users of an on-coming danger or to make them aware of your presence for safety reasons. You should not use a horn in a built up area between 11.30 at night and 7 in the morning, except in an emergency.</div>
-      </div>
+  <div class="card"><p class="q">Who cannot use a motorway?</p><p class="a">People who do not hold a full driving licence for the vehicle they are driving, vehicles incapable of at least 50kmh, cyclists, pedestrians…</p></div>
 
-      <!-- 3 -->
-      <div class="card item">
-        <div class="q">What does a broken white line crossing the left hand lane mean?</div>
-        <div class="a">This is a yield line. You must give right-of-way to any traffic on the major road ahead.</div>
-      </div>
+  <div class="card"><p class="q">How far back is a safe distance to drive behind another vehicle?</p><p class="a">Allow a 2 second gap, double this if the road is wet.</p></div>
 
-      <!-- 4 -->
-      <div class="card item">
-        <div class="q">How should you position yourself for turning right on a one-way street?</div>
-        <div class="a">You should drive as close as you safely can to the right hand side of the one-way street.</div>
-      </div>
+  <div class="card"><p class="q">What does the island in the middle of a pedestrian crossing mean?</p><p class="a">Each side of the island is a separate crossing.</p></div>
 
-      <!-- 5 -->
-      <div class="card item">
-        <div class="q">Who cannot use a motorway?</div>
-        <div class="a">People who do not hold a full driving licence for the vehicle they are driving, vehicles incapable of at least 50 km/h, cyclists, pedestrians, and other restricted vehicles.</div>
-      </div>
+  <div class="card"><p class="q">When can you cross a continuous white line?</p><p class="a">To avoid an obstruction.</p></div>
 
-      <!-- 6 -->
-      <div class="card item">
-        <div class="q">How far back is a safe distance to drive behind another vehicle?</div>
-        <div class="a">Allow a 2 second gap; double this if the road is wet.</div>
-      </div>
+  <div class="card"><p class="q">What does a broken yellow line mean?</p><p class="a">It marks the edge of the road.</p></div>
 
-      <!-- 7 -->
-      <div class="card item">
-        <div class="q">What does the island in the middle of a pedestrian crossing mean?</div>
-        <div class="a">Each side of the island is a separate crossing.</div>
-      </div>
+  <div class="card"><p class="q">If dazzled by the lights of an oncoming vehicle, what should you do?</p><p class="a">Slow down and stop if necessary.</p></div>
 
-      <!-- 8 -->
-      <div class="card item">
-        <div class="q">When can you cross a continuous white line?</div>
-        <div class="a">To avoid an obstruction.</div>
-      </div>
+  <div class="card"><p class="q">At traffic lights, what does a flashing amber light mean?</p><p class="a">Yield right of way to pedestrians.</p></div>
 
-      <!-- 9 -->
-      <div class="card item">
-        <div class="q">What does a broken yellow line mean?</div>
-        <div class="a">It marks the edge of the road.</div>
-      </div>
+  <div class="card"><p class="q">What is the basic rule of a yellow box junction?</p><p class="a">You cannot stop in the box, unless you are waiting to turn right into a clear road and are not obstructing oncoming traffic.</p></div>
 
-      <!-- 10 -->
-      <div class="card item">
-        <div class="q">If dazzled by the lights of an oncoming vehicle, what should you do?</div>
-        <div class="a">Slow down and stop if necessary. Take care and avoid looking directly at the lights.</div>
-      </div>
+  <div class="card"><p class="q">Who has priority at a road junction, crossroad or a roundabout?</p><p class="a">Traffic to the right, traffic already in the junction and pedestrians.</p></div>
 
-      <!-- 11 -->
-      <div class="card item">
-        <div class="q">At traffic lights, what does a flashing amber light mean?</div>
-        <div class="a">Yield right of way to pedestrians (flashing amber occurs at some pedestrian crossings). It indicates caution and give way where appropriate.</div>
-      </div>
+  <div class="card"><p class="q">In what situations should you use dipped headlights?</p><p class="a">When meeting oncoming traffic. On continuously lit roads. When following close behind another vehicle. In snow or fog. During the day.</p></div>
 
-      <!-- 12 -->
-      <div class="card item">
-        <div class="q">What is the basic rule of a yellow box junction?</div>
-        <div class="a">You cannot stop in the box unless you are waiting to turn right into a clear road and are not obstructing oncoming traffic.</div>
-      </div>
+  <div class="card"><p class="q">Where should you not park?</p><p class="a">Near a bend, less then 5M from a junction, more then 1/2M from the kerb, opposite another vehicle on a narrow road, in an operational bus lane or cycle lane, a bus stop or taxi rank, blocking a gate, obscuring a sign…..</p></div>
 
-      <!-- 13 -->
-      <div class="card item">
-        <div class="q">Who has priority at a road junction, crossroad or a roundabout?</div>
-        <div class="a">Traffic to the right, traffic already in the junction and pedestrians (general rule: give priority as signage/markings indicate; typically yield to traffic already on the roundabout and to the right).</div>
-      </div>
+  <div class="card"><p class="q">What is the maximum Motorway speed limit?</p><p class="a">120kmh.</p></div>
 
-      <!-- 14 -->
-      <div class="card item">
-        <div class="q">In what situations should you use dipped headlights?</div>
-        <div class="a">When meeting oncoming traffic, on continuously lit roads, when following close behind another vehicle, in snow or fog, or during the day when visibility is poor.</div>
-      </div>
+  <div class="card"><p class="q">Where should you not overtake?</p><p class="a">Approaching a bend, a junction, a pedestrian crossing, the brow of a hill or a hump-backed bridge, at a continuous white line or anywhere that your view is restricted.</p></div>
 
-      <!-- 15 -->
-      <div class="card item">
-        <div class="q">Where should you not park?</div>
-        <div class="a">Near a bend, less than 5 m from a junction, more than 1/2 m from the kerb, opposite another vehicle on a narrow road, in an operational bus lane or cycle lane, at a bus stop or taxi rank, blocking a gate, obscuring a sign, etc. Also follow local signs.</div>
-      </div>
+  <div class="card"><p class="q">What is the minimum tyre thread depth?</p><p class="a">1.6mm.</p></div>
 
-      <!-- 16 -->
-      <div class="card item">
-        <div class="q">What is the maximum Motorway speed limit?</div>
-        <div class="a">120 km/h.</div>
-      </div>
+  <div class="card"><p class="q">Starting with green, what is the sequence of traffic lights?</p><p class="a">Green, amber, red. (Flashing amber would occur at a pedestrian crossing).</p></div>
 
-      <!-- 17 -->
-      <div class="card item">
-        <div class="q">Where should you not overtake?</div>
-        <div class="a">Approaching a bend, a junction, a pedestrian crossing, the brow of a hill or a hump-backed bridge, at a continuous white line or anywhere that your view is restricted.</div>
-      </div>
+  <div class="card"><p class="q">What does a single yellow line mean?</p><p class="a">No parking at the times specified on the nearby information plate.</p></div>
 
-      <!-- 18 -->
-      <div class="card item">
-        <div class="q">What is the minimum tyre tread depth?</div>
-        <div class="a">1.6 mm.</div>
-      </div>
+  <div class="card"><p class="q">So, what does a double yellow line mean?</p><p class="a">Double yellow lines mean no parking at any time.</p></div>
 
-      <!-- 19 -->
-      <div class="card item">
-        <div class="q">Starting with green, what is the sequence of traffic lights?</div>
-        <div class="a">Green, amber, red. (Flashing amber would occur at a pedestrian crossing.)</div>
-      </div>
+  <div class="card"><p class="q">Which lane should you normally use on a motorway?</p><p class="a">Given the choice of lanes you would normally drive in the left lane.</p></div>
 
-      <!-- 20 -->
-      <div class="card item">
-        <div class="q">What does a single yellow line mean?</div>
-        <div class="a">No parking at the times specified on the nearby information plate.</div>
-      </div>
+  <div class="card"><p class="q">Why would you use the outside lane on a motorway?</p><p class="a">To overtake or to accommodate traffic merging from the left. Once finished move back into the left lane.</p></div>
 
-      <!-- 21 -->
-      <div class="card item">
-        <div class="q">So, what does a double yellow line mean?</div>
-        <div class="a">Double yellow lines mean no parking at any time.</div>
-      </div>
+  <div class="card"><p class="q">If you break down on a motorway, what should you do?</p><p class="a">Turn on hazard lights, move well over to the left of the hard shoulder, get out on the passenger side and wait on the embankment, use a mobile or the roadside telephone to inform the Gardai, use a warning triangle if you have one. When moving off build up speed in the hard shoulder and watch for a safe gap.</p></div>
 
-      <!-- 22 -->
-      <div class="card item">
-        <div class="q">Which lane should you normally use on a motorway?</div>
-        <div class="a">Given the choice of lanes you would normally drive in the left lane.</div>
-      </div>
+  <div class="card"><p class="q">What does a red light mean?</p><p class="a">A red light means stop before the stop line or before the light. If you moved into the junction when the light was green to turn right you can still clear the junction.</p></div>
 
-      <!-- 23 -->
-      <div class="card item">
-        <div class="q">Why would you use the outside lane on a motorway?</div>
-        <div class="a">To overtake or to accommodate traffic merging from the left. Once finished move back into the left lane.</div>
-      </div>
+  <div class="card"><p class="q">So what does a green light mean?</p><p class="a">The green light means go, if safe to do so.</p></div>
 
-      <!-- 24 -->
-      <div class="card item">
-        <div class="q">If you break down on a motorway, what should you do?</div>
-        <div class="a">Turn on hazard lights, move well over to the left of the hard shoulder, get out on the passenger side and wait on the embankment, use a mobile or the roadside telephone to inform the Gardaí, use a warning triangle if you have one. When moving off build up speed in the hard shoulder and watch for a safe gap.</div>
-      </div>
+  <div class="card"><p class="q">And what does an amber light mean?</p><p class="a">An amber light means stop if it is safe to do so. You should be able to stop comfortably before the line and the vehicles behind you should also be able to stop comfortably.</p></div>
 
-      <!-- 25 -->
-      <div class="card item">
-        <div class="q">What does a red light mean?</div>
-        <div class="a">A red light means stop before the stop line or before the light. If you moved into the junction when the light was green to turn right you can still clear the junction.</div>
-      </div>
+  <div class="card"><p class="q">What does a green arrow mean?</p><p class="a">A green arrow (filter light) means that traffic going the specified direction can go, assuming it is safe.</p></div>
 
-      <!-- 26 -->
-      <div class="card item">
-        <div class="q">So what does a green light mean?</div>
-        <div class="a">The green light means go, if safe to do so.</div>
-      </div>
+  <div class="card"><p class="q">When can you overtake on the left?</p><p class="a">When the vehicle in front of you is turning right, when you intend are turning left, when the vehicles in the lane on your right are moving more slowly then you are.</p></div>
 
-      <!-- 27 -->
-      <div class="card item">
-        <div class="q">And what does an amber light mean?</div>
-        <div class="a">An amber light means stop if it is safe to do so. You should be able to stop comfortably before the line and the vehicles behind you should also be able to stop comfortably.</div>
-      </div>
+  <div class="card"><p class="q">At an uncontrolled junction of equal importance, to whom would you give way?</p><p class="a">Yield to traffic on your right and traffic already turning.</p></div>
 
-      <!-- 28 -->
-      <div class="card item">
-        <div class="q">What does a green arrow mean?</div>
-        <div class="a">A green arrow (filter light) means that traffic going the specified direction can go, assuming it is safe.</div>
-      </div>
+  <div class="card"><p class="q">What is a clearway?</p><p class="a">It is a road where stopping and parking are prohibited during certain times.</p></div>
 
-      <!-- 29 -->
-      <div class="card item">
-        <div class="q">When can you overtake on the left?</div>
-        <div class="a">When the vehicle in front of you is turning right, when you intend to turn left, or when the vehicles in the lane on your right are moving more slowly than you are (e.g., slow-moving lanes of traffic).</div>
-      </div>
+  <div class="card"><p class="q">Name three people in authority whom you must stop for?</p><p class="a">A Garda, a school warden or a person in charge of animals.</p></div>
 
-      <!-- 30 -->
-      <div class="card item">
-        <div class="q">At an uncontrolled junction of equal importance, to whom would you give way?</div>
-        <div class="a">Yield to traffic on your right and traffic already turning.</div>
-      </div>
+  <div class="card"><p class="q">If you wish to turn right from a minor road onto a dual-carriageway which has a wide central median, what should you do?</p><p class="a">Firstly, you should drive onto the median strip when the nearest carriageway is clear. Then wait for a gap in traffic from the left, before proceeding.</p></div>
 
-      <!-- 31 -->
-      <div class="card item">
-        <div class="q">What is a clearway?</div>
-        <div class="a">It is a road where stopping and parking are prohibited during certain times (look for signs showing exact restrictions).</div>
-      </div>
+  <div class="card"><p class="q">What should you do when you wish to turn right on to a dual-carriageway which has a narrow central median?</p><p class="a">You should wait on the side road until there is a suitable gap in the traffic in both directions.</p></div>
 
-      <!-- 32 -->
-      <div class="card item">
-        <div class="q">Name three people in authority whom you must stop for?</div>
-        <div class="a">A Garda (police officer), a school warden, or a person in charge of animals.</div>
-      </div>
+  <div class="card"><p class="q">Where should you position yourself when you are driving on a one-way street and intend on turning right?</p><p class="a">Try drive close to the right-hand-side of the road.</p></div>
 
-      <!-- 33 -->
-      <div class="card item">
-        <div class="q">If you wish to turn right from a minor road onto a dual-carriageway which has a wide central median, what should you do?</div>
-        <div class="a">Firstly, you should drive onto the median strip when the nearest carriageway is clear. Then wait for a gap in traffic from the left, before proceeding.</div>
-      </div>
+  <div class="card"><p class="q">If you are driving on a primary road which is not marked by a central dividing line. What should you do?</p><p class="a">Imagine where it would be and drive on the left-hand side.</p></div>
 
-      <!-- 34 -->
-      <div class="card item">
-        <div class="q">What should you do when you wish to turn right on to a dual-carriageway which has a narrow central median?</div>
-        <div class="a">You should wait on the side road until there is a suitable gap in the traffic in both directions.</div>
-      </div>
+  <div class="card"><p class="q">When you see children just ahead on the road, what should you do?</p><p class="a">Give them a wide clearance and be prepared to slow down if necessary.</p></div>
 
-      <!-- 35 -->
-      <div class="card item">
-        <div class="q">Where should you position yourself when you are driving on a one-way street and intend on turning right?</div>
-        <div class="a">Try to drive close to the right-hand side of the road.</div>
-      </div>
+  <div class="card"><p class="q">What is the correct position for a vehicle when turning right?</p><p class="a">Just left of the centre of the road.</p></div>
 
-      <!-- 36 -->
-      <div class="card item">
-        <div class="q">If you are driving on a primary road which is not marked by a central dividing line. What should you do?</div>
-        <div class="a">Imagine where it would be and drive on the left-hand side.</div>
-      </div>
+  <div class="card"><p class="q">You see a vehicle with blue flashing lights approaching. What should you do?</p><p class="a">You may move to the left and reduce speed, stopping if necessary.</p></div>
 
-      <!-- 37 -->
-      <div class="card item">
-        <div class="q">When you see children just ahead on the road, what should you do?</div>
-        <div class="a">Give them a wide clearance and be prepared to slow down if necessary.</div>
-      </div>
+  <div class="card"><p class="q">When may you pass another vehicle on the left-hand side?</p><p class="a">You may pass on the left if the vehicle in front is signaling to turn right or in slow moving lanes of traffic.</p></div>
 
-      <!-- 38 -->
-      <div class="card item">
-        <div class="q">What is the correct position for a vehicle when turning right?</div>
-        <div class="a">Just left of the centre of the road (allowing room to complete the turn safely and give way as required).</div>
-      </div>
+  <div class="card"><p class="q">How would you recognise a zebra crossing at night?</p><p class="a">There would be flashing amber beacons.</p></div>
 
-      <!-- 39 -->
-      <div class="card item">
-        <div class="q">You see a vehicle with blue flashing lights approaching. What should you do?</div>
-        <div class="a">You may move to the left and reduce speed, stopping if necessary to allow it to pass. Give way to emergency vehicles.</div>
-      </div>
-
-      <!-- 40 -->
-      <div class="card item">
-        <div class="q">When may you pass another vehicle on the left-hand side?</div>
-        <div class="a">You may pass on the left if the vehicle in front is signalling to turn right or in slow moving lanes of traffic.</div>
-      </div>
-
-      <!-- 41 -->
-      <div class="card item">
-        <div class="q">How would you recognise a zebra crossing at night?</div>
-        <div class="a">There would be flashing amber beacons. Also look for road markings and pole-mounted belisha beacons (or equivalent) indicating pedestrian priority.</div>
-      </div>
-
-      <!-- 42: Wrap-up -->
-      <div class="card item">
-        <div class="q">Anything else I should study?</div>
-        <div class="a">The rules of the road will have all of the information you need for the theory questions for the driving test. Also ensure you know the hand signals — the images above show the standard signals.</div>
-      </div>
-    </section>
-
-    <footer>Tip: Use the search box to quickly find a question. Good luck on your test!</footer>
-  </main>
+  <!-- Hand signals -->
+  <h2>Hand Signals</h2>
+  <div class="images">
+    <img src="/assets/images/613f7fe3-656d-4ae7-b2f7-fcb7542b296e.png" alt="Hand Signal 1">
+    <img src="/assets/images/b6cbfd8d-eea3-44de-98a7-d239f7d72fa1.png" alt="Hand Signal 2">
+  </div>
 
   <script>
-  // Toggle answers by adding/removing "open" class
-  document.querySelectorAll('.card').forEach(card => {
-    const q = card.querySelector('.q');
-    q.addEventListener('click', () => {
-      card.classList.toggle('open');
-      // Scroll into view when opened
-      if(card.classList.contains('open')){
-        setTimeout(()=> card.scrollIntoView({behavior:'smooth',block:'center'}),120);
-      }
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.card').forEach(c => {
+          if (c !== card) c.classList.remove('open');
+        });
+        card.classList.toggle('open');
+      });
     });
-  });
-
-  // Expand/Collapse All
-  document.getElementById('expandAll').addEventListener('click', () => {
-    document.querySelectorAll('.card').forEach(c => c.classList.add('open'));
-  });
-  document.getElementById('collapseAll').addEventListener('click', () => {
-    document.querySelectorAll('.card').forEach(c => c.classList.remove('open'));
-  });
-
-  // Search filter
-  const search = document.getElementById('search');
-  search.addEventListener('input', (e) => {
-    const v = e.target.value.trim().toLowerCase();
-    document.querySelectorAll('#qa-list .item').forEach(it => {
-      const q = it.querySelector('.q').innerText.toLowerCase();
-      const a = it.querySelector('.a').innerText.toLowerCase();
-      if(!v || q.includes(v) || a.includes(v)) it.style.display = '';
-      else it.style.display = 'none';
-    });
-  });
-</script>
+  </script>
 </body>
 </html>
-
-
